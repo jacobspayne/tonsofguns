@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		33B0E018197D80F7003C2840 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B0E017197D80F7003C2840 /* Foundation.framework */; };
+		33B0E01A197D80F7003C2840 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B0E019197D80F7003C2840 /* CoreGraphics.framework */; };
+		33B0E01C197D80F7003C2840 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B0E01B197D80F7003C2840 /* UIKit.framework */; };
+		33B0E022197D80F7003C2840 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33B0E020197D80F7003C2840 /* InfoPlist.strings */; };
+		33B0E024197D80F7003C2840 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B0E023197D80F7003C2840 /* main.m */; };
+		33B0E028197D80F7003C2840 /* LBJPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B0E027197D80F7003C2840 /* LBJPAppDelegate.m */; };
+		33B0E02B197D80F7003C2840 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33B0E029197D80F7003C2840 /* Main.storyboard */; };
+		33B0E02E197D80F7003C2840 /* LBJPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B0E02D197D80F7003C2840 /* LBJPViewController.m */; };
+		33B0E030197D80F7003C2840 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33B0E02F197D80F7003C2840 /* Images.xcassets */; };
+		33B0E037197D80F7003C2840 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B0E036197D80F7003C2840 /* XCTest.framework */; };
+		33B0E038197D80F7003C2840 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B0E017197D80F7003C2840 /* Foundation.framework */; };
+		33B0E039197D80F7003C2840 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B0E01B197D80F7003C2840 /* UIKit.framework */; };
+		33B0E041197D80F8003C2840 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33B0E03F197D80F8003C2840 /* InfoPlist.strings */; };
+		33B0E043197D80F8003C2840 /* SimpleGroceryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B0E042197D80F8003C2840 /* SimpleGroceryTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		33B0E03A197D80F8003C2840 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33B0E00C197D80F7003C2840 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33B0E013197D80F7003C2840;
+			remoteInfo = SimpleGrocery;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		33B0E014197D80F7003C2840 /* SimpleGrocery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGrocery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33B0E017197D80F7003C2840 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		33B0E019197D80F7003C2840 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		33B0E01B197D80F7003C2840 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		33B0E01F197D80F7003C2840 /* SimpleGrocery-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleGrocery-Info.plist"; sourceTree = "<group>"; };
+		33B0E021197D80F7003C2840 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		33B0E023197D80F7003C2840 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		33B0E025197D80F7003C2840 /* SimpleGrocery-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleGrocery-Prefix.pch"; sourceTree = "<group>"; };
+		33B0E026197D80F7003C2840 /* LBJPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBJPAppDelegate.h; sourceTree = "<group>"; };
+		33B0E027197D80F7003C2840 /* LBJPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBJPAppDelegate.m; sourceTree = "<group>"; };
+		33B0E02A197D80F7003C2840 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		33B0E02C197D80F7003C2840 /* LBJPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LBJPViewController.h; sourceTree = "<group>"; };
+		33B0E02D197D80F7003C2840 /* LBJPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LBJPViewController.m; sourceTree = "<group>"; };
+		33B0E02F197D80F7003C2840 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		33B0E035197D80F7003C2840 /* SimpleGroceryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleGroceryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		33B0E036197D80F7003C2840 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		33B0E03E197D80F8003C2840 /* SimpleGroceryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleGroceryTests-Info.plist"; sourceTree = "<group>"; };
+		33B0E040197D80F8003C2840 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		33B0E042197D80F8003C2840 /* SimpleGroceryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleGroceryTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		33B0E011197D80F7003C2840 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33B0E01A197D80F7003C2840 /* CoreGraphics.framework in Frameworks */,
+				33B0E01C197D80F7003C2840 /* UIKit.framework in Frameworks */,
+				33B0E018197D80F7003C2840 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33B0E032197D80F7003C2840 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33B0E037197D80F7003C2840 /* XCTest.framework in Frameworks */,
+				33B0E039197D80F7003C2840 /* UIKit.framework in Frameworks */,
+				33B0E038197D80F7003C2840 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		33B0E00B197D80F7003C2840 = {
+			isa = PBXGroup;
+			children = (
+				33B0E01D197D80F7003C2840 /* SimpleGrocery */,
+				33B0E03C197D80F8003C2840 /* SimpleGroceryTests */,
+				33B0E016197D80F7003C2840 /* Frameworks */,
+				33B0E015197D80F7003C2840 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		33B0E015197D80F7003C2840 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				33B0E014197D80F7003C2840 /* SimpleGrocery.app */,
+				33B0E035197D80F7003C2840 /* SimpleGroceryTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		33B0E016197D80F7003C2840 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33B0E017197D80F7003C2840 /* Foundation.framework */,
+				33B0E019197D80F7003C2840 /* CoreGraphics.framework */,
+				33B0E01B197D80F7003C2840 /* UIKit.framework */,
+				33B0E036197D80F7003C2840 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33B0E01D197D80F7003C2840 /* SimpleGrocery */ = {
+			isa = PBXGroup;
+			children = (
+				33B0E026197D80F7003C2840 /* LBJPAppDelegate.h */,
+				33B0E027197D80F7003C2840 /* LBJPAppDelegate.m */,
+				33B0E029197D80F7003C2840 /* Main.storyboard */,
+				33B0E02C197D80F7003C2840 /* LBJPViewController.h */,
+				33B0E02D197D80F7003C2840 /* LBJPViewController.m */,
+				33B0E02F197D80F7003C2840 /* Images.xcassets */,
+				33B0E01E197D80F7003C2840 /* Supporting Files */,
+			);
+			path = SimpleGrocery;
+			sourceTree = "<group>";
+		};
+		33B0E01E197D80F7003C2840 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				33B0E01F197D80F7003C2840 /* SimpleGrocery-Info.plist */,
+				33B0E020197D80F7003C2840 /* InfoPlist.strings */,
+				33B0E023197D80F7003C2840 /* main.m */,
+				33B0E025197D80F7003C2840 /* SimpleGrocery-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		33B0E03C197D80F8003C2840 /* SimpleGroceryTests */ = {
+			isa = PBXGroup;
+			children = (
+				33B0E042197D80F8003C2840 /* SimpleGroceryTests.m */,
+				33B0E03D197D80F8003C2840 /* Supporting Files */,
+			);
+			path = SimpleGroceryTests;
+			sourceTree = "<group>";
+		};
+		33B0E03D197D80F8003C2840 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				33B0E03E197D80F8003C2840 /* SimpleGroceryTests-Info.plist */,
+				33B0E03F197D80F8003C2840 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		33B0E013197D80F7003C2840 /* SimpleGrocery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33B0E046197D80F8003C2840 /* Build configuration list for PBXNativeTarget "SimpleGrocery" */;
+			buildPhases = (
+				33B0E010197D80F7003C2840 /* Sources */,
+				33B0E011197D80F7003C2840 /* Frameworks */,
+				33B0E012197D80F7003C2840 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleGrocery;
+			productName = SimpleGrocery;
+			productReference = 33B0E014197D80F7003C2840 /* SimpleGrocery.app */;
+			productType = "com.apple.product-type.application";
+		};
+		33B0E034197D80F7003C2840 /* SimpleGroceryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33B0E049197D80F8003C2840 /* Build configuration list for PBXNativeTarget "SimpleGroceryTests" */;
+			buildPhases = (
+				33B0E031197D80F7003C2840 /* Sources */,
+				33B0E032197D80F7003C2840 /* Frameworks */,
+				33B0E033197D80F7003C2840 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33B0E03B197D80F8003C2840 /* PBXTargetDependency */,
+			);
+			name = SimpleGroceryTests;
+			productName = SimpleGroceryTests;
+			productReference = 33B0E035197D80F7003C2840 /* SimpleGroceryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		33B0E00C197D80F7003C2840 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LBJP;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Leonard Butz & Jacob Payne";
+				TargetAttributes = {
+					33B0E034197D80F7003C2840 = {
+						TestTargetID = 33B0E013197D80F7003C2840;
+					};
+				};
+			};
+			buildConfigurationList = 33B0E00F197D80F7003C2840 /* Build configuration list for PBXProject "SimpleGrocery" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 33B0E00B197D80F7003C2840;
+			productRefGroup = 33B0E015197D80F7003C2840 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				33B0E013197D80F7003C2840 /* SimpleGrocery */,
+				33B0E034197D80F7003C2840 /* SimpleGroceryTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		33B0E012197D80F7003C2840 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33B0E030197D80F7003C2840 /* Images.xcassets in Resources */,
+				33B0E022197D80F7003C2840 /* InfoPlist.strings in Resources */,
+				33B0E02B197D80F7003C2840 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33B0E033197D80F7003C2840 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33B0E041197D80F8003C2840 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		33B0E010197D80F7003C2840 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33B0E02E197D80F7003C2840 /* LBJPViewController.m in Sources */,
+				33B0E028197D80F7003C2840 /* LBJPAppDelegate.m in Sources */,
+				33B0E024197D80F7003C2840 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33B0E031197D80F7003C2840 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33B0E043197D80F8003C2840 /* SimpleGroceryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		33B0E03B197D80F8003C2840 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33B0E013197D80F7003C2840 /* SimpleGrocery */;
+			targetProxy = 33B0E03A197D80F8003C2840 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		33B0E020197D80F7003C2840 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33B0E021197D80F7003C2840 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		33B0E029197D80F7003C2840 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33B0E02A197D80F7003C2840 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		33B0E03F197D80F8003C2840 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33B0E040197D80F8003C2840 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		33B0E044197D80F8003C2840 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		33B0E045197D80F8003C2840 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		33B0E047197D80F8003C2840 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleGrocery/SimpleGrocery-Prefix.pch";
+				INFOPLIST_FILE = "SimpleGrocery/SimpleGrocery-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		33B0E048197D80F8003C2840 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleGrocery/SimpleGrocery-Prefix.pch";
+				INFOPLIST_FILE = "SimpleGrocery/SimpleGrocery-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		33B0E04A197D80F8003C2840 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SimpleGrocery.app/SimpleGrocery";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleGrocery/SimpleGrocery-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SimpleGroceryTests/SimpleGroceryTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		33B0E04B197D80F8003C2840 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SimpleGrocery.app/SimpleGrocery";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimpleGrocery/SimpleGrocery-Prefix.pch";
+				INFOPLIST_FILE = "SimpleGroceryTests/SimpleGroceryTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		33B0E00F197D80F7003C2840 /* Build configuration list for PBXProject "SimpleGrocery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33B0E044197D80F8003C2840 /* Debug */,
+				33B0E045197D80F8003C2840 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33B0E046197D80F8003C2840 /* Build configuration list for PBXNativeTarget "SimpleGrocery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33B0E047197D80F8003C2840 /* Debug */,
+				33B0E048197D80F8003C2840 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		33B0E049197D80F8003C2840 /* Build configuration list for PBXNativeTarget "SimpleGroceryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33B0E04A197D80F8003C2840 /* Debug */,
+				33B0E04B197D80F8003C2840 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 33B0E00C197D80F7003C2840 /* Project object */;
+}
