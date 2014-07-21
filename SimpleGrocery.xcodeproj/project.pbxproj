@@ -21,6 +21,8 @@
 		33B0E039197D80F7003C2840 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B0E01B197D80F7003C2840 /* UIKit.framework */; };
 		33B0E041197D80F8003C2840 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33B0E03F197D80F8003C2840 /* InfoPlist.strings */; };
 		33B0E043197D80F8003C2840 /* SimpleGroceryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B0E042197D80F8003C2840 /* SimpleGroceryTests.m */; };
+		33B0E04E197D829B003C2840 /* LBJPTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B0E04D197D829B003C2840 /* LBJPTableViewController.m */; };
+		33B0E051197D8523003C2840 /* LBJPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33B0E050197D8523003C2840 /* LBJPTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		33B0E03E197D80F8003C2840 /* SimpleGroceryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleGroceryTests-Info.plist"; sourceTree = "<group>"; };
 		33B0E040197D80F8003C2840 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		33B0E042197D80F8003C2840 /* SimpleGroceryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleGroceryTests.m; sourceTree = "<group>"; };
+		33B0E04C197D829B003C2840 /* LBJPTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBJPTableViewController.h; sourceTree = "<group>"; };
+		33B0E04D197D829B003C2840 /* LBJPTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBJPTableViewController.m; sourceTree = "<group>"; };
+		33B0E04F197D8523003C2840 /* LBJPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBJPTableViewCell.h; sourceTree = "<group>"; };
+		33B0E050197D8523003C2840 /* LBJPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBJPTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,10 @@
 				33B0E027197D80F7003C2840 /* LBJPAppDelegate.m */,
 				33B0E029197D80F7003C2840 /* Main.storyboard */,
 				33B0E02C197D80F7003C2840 /* LBJPViewController.h */,
+				33B0E04C197D829B003C2840 /* LBJPTableViewController.h */,
+				33B0E04D197D829B003C2840 /* LBJPTableViewController.m */,
+				33B0E04F197D8523003C2840 /* LBJPTableViewCell.h */,
+				33B0E050197D8523003C2840 /* LBJPTableViewCell.m */,
 				33B0E02D197D80F7003C2840 /* LBJPViewController.m */,
 				33B0E02F197D80F7003C2840 /* Images.xcassets */,
 				33B0E01E197D80F7003C2840 /* Supporting Files */,
@@ -251,8 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				33B0E02E197D80F7003C2840 /* LBJPViewController.m in Sources */,
+				33B0E051197D8523003C2840 /* LBJPTableViewCell.m in Sources */,
 				33B0E028197D80F7003C2840 /* LBJPAppDelegate.m in Sources */,
 				33B0E024197D80F7003C2840 /* main.m in Sources */,
+				33B0E04E197D829B003C2840 /* LBJPTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
