@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface LBJPTableViewController : UITableViewController
+@interface LBJPTableViewController : PFQueryTableViewController
 
 @property (weak, nonatomic, readwrite) NSMutableArray *tableData;
 

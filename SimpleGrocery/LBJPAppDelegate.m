@@ -7,12 +7,38 @@
 //
 
 #import "LBJPAppDelegate.h"
+#import <Parse/Parse.h>
+#import "LBJPTableViewController.h"
 
 @implementation LBJPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    [Parse setApplicationId:@"UGFbUlTO9dWQCKxAxihBfYw1QqkDphcGPi58pR7Z"
+                  clientKey:@"3Wr7IKhSNq3VUwlCkXH1N928RjrIQASJmzbRPAcn"];
+    
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    
+//    LBJPTableViewController *controller = [[LBJPTableViewController alloc] init];
+//    
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:controller];
+//    [self.window makeKeyAndVisible];
+    
+    // Let's make an object each launch, so there's definitely something to display.
+    
+//    PFObject *object = [PFObject objectWithClassName:@"Gun"];
+//    [object setObject:@"Sample Text" forKey:@"foo"];
+//    [object setObject:@1 forKey:@"priority"];
+//    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        // Refresh the table when the object is done saving.
+//        [controller loadObjects];
+//    }];
+
+    
+    
     return YES;
 }
 							
