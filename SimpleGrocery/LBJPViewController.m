@@ -125,7 +125,6 @@
 {
     PFFile *imageFile = [PFFile fileWithName:jpgName data:imageData];
     
-    // First we check if an image already exists for this moniker.
     PFQuery *query = [PFQuery queryWithClassName:@"UserThumbnail"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -144,12 +143,12 @@
                     } else {
                         
                         //create a new object
-                        userPhoto = [PFObject objectWithClassName:@"UserThumbnail"];
-                        //[userPhoto setObject:self.moniker.text forKey:@"nickname"];
+                        userPhoto = [PFObject objectWithClassName:@"Gun"];
+                        [userPhoto setObject:@"placeholderr" forKey:@"picture"];
                     }
                     
                     // associate the image file with the user object.
-                    [userPhoto setObject:imageFile forKey:@"imageFile"];
+                    [userPhoto setObject:imageFile forKey:@"picture"];
                     
                     // save the object
                     [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -234,6 +233,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         
         [self.gunPictureButton setImage:smallImage forState:UIControlStateNormal];
         [self.gunPictureButton setImage:smallImage forState:UIControlStateHighlighted];
+        
+        
         
         
     }
