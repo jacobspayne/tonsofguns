@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" editingAccessoryType="checkmark" id="bOC-5I-DAp">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="bOC-5I-DAp">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bOC-5I-DAp" id="IVq-uc-rpM">
@@ -28,10 +28,54 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ucW-Ep-9Eo"/>
+                    <connections>
+                        <segue destination="bUy-29-RVH" kind="push" identifier="newItem" id="b0R-pv-6XG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffl-ym-phs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1019" y="141"/>
+            <point key="canvasLocation" x="1035" y="141"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bQC-R2-0jU">
+            <objects>
+                <viewController id="bUy-29-RVH" customClass="LBJPViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YL6-Qs-nGq"/>
+                        <viewControllerLayoutGuide type="bottom" id="nYb-sg-h3A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YPb-I4-sm3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter grocery item description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AE6-Up-ehl">
+                                <rect key="frame" x="25" y="80" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="u31-mg-QOF">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="eRL-gS-Rhp">
+                            <connections>
+                                <action selector="cancelAddItem:" destination="bUy-29-RVH" id="vLH-BH-6Kq"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="ril-Vb-rRB">
+                            <connections>
+                                <action selector="saveNewItem:" destination="bUy-29-RVH" id="lzD-ZH-4Gc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="itemTitle" destination="AE6-Up-ehl" id="ONi-el-8mF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tB9-QL-1fV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1549" y="141"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fcx-wk-B4t">

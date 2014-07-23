@@ -25,13 +25,13 @@
         // Custom the table
         
         // The className to query on
-        self.parseClassName = @"Gun";
+        self.parseClassName = @"GroceryListItem";
         
         // The key of the PFObject to display in the label of the default cell style
-        self.textKey = @"foo";
+        self.textKey = @"title";
         
         // The title for this table in the Navigation Controller.
-        self.title = @"Guns";
+        self.title = @"Grocery List";
         
         // Whether the built-in pull-to-refresh is enabled
         self.pullToRefreshEnabled = YES;
@@ -54,13 +54,13 @@
         // Custom the table
         
         // The className to query on
-        self.parseClassName = @"Gun";
+        self.parseClassName = @"GroceryListItem";
         
         // The key of the PFObject to display in the label of the default cell style
-        self.textKey = @"foo";
+        self.textKey = @"title";
         
         // The title for this table in the Navigation Controller.
-        self.title = @"Todos";
+        self.title = @"Grocery List";
         
         // Whether the built-in pull-to-refresh is enabled
         self.pullToRefreshEnabled = YES;
@@ -69,7 +69,7 @@
         self.paginationEnabled = YES;
         
         // The number of objects to show per page
-        self.objectsPerPage = 5;
+        self.objectsPerPage = 10;
     }
     return self;
 }
@@ -80,8 +80,26 @@
     [super viewDidLoad];
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
+                                  initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                  target:self action:@selector(addNewItem)];
+    
+    self.navigationItem.rightBarButtonItem = addButton;
+    
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    [self loadObjects];
 }
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self loadObjects];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -146,8 +164,16 @@
     }
     
     // Configure the cell
-    cell.textLabel.text = [object objectForKey:@"foo"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Priority: %@", [object objectForKey:@"priority"]];
+    cell.textLabel.text = [object objectForKey:@"title"];
+    //cell.detailTextLabel.text = [NSString stringWithFormat:@"Priority: %@", [object objectForKey:@"priority"]];
+    
+    BOOL checked = [[object objectForKey:@"checked"] boolValue];
+    if (checked) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
@@ -157,6 +183,23 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    
+    // prevent the method from trying to toggle the "checked"
+    // status of the virtual "Load More..." table cell
+    if ((indexPath.row + 1) > [self.objects count]) {
+        NSLog(@"Load More... was tapped");
+        return;
+        //rest of didSelectRowAtIndexPath doesn't run because of return;
+    }
+    
+    // grab the Parse object associated with the selected
+    PFObject * object = [self.objects objectAtIndex: indexPath.row];
+    BOOL checked = [[object objectForKey:@"checked"]boolValue];
+    checked = !checked;
+    NSNumber *checkedAsNumber = [NSNumber numberWithBool:checked];
+    [object setValue:checkedAsNumber forKey:@"checked"];
+    [object save];
+    [self loadObjects];
 }
 
 
@@ -177,17 +220,20 @@
         [tableView reloadRowsAtIndexPaths: [tableView indexPathsForVisibleRows] withRowAnimation: UITableViewRowAnimationFade];
         [tableView endUpdates];
         PFObject * object = [self.objects objectAtIndex: indexPath.row];
-        NSLog(@"Objects before delete: %@", self.objects);
-        [object deleteInBackgroundWithBlock: ^ (BOOL succeeded, NSError * error) {
-            NSLog(@"Deleted, reloading...");
-            [self loadObjects];
-            NSLog(@"Objects after delete: %@", self.objects);
-        }];
+        //NSLog(@"Objects before delete: %@", self.objects);
+        [object delete];
+        [self loadObjects];
         
         
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }
+}
+
+- (void)addNewItem
+{
+    NSLog(@"Just called the addNewItem method");
+    [self performSegueWithIdentifier: @"newItem" sender: self];
 }
 
 
@@ -207,7 +253,7 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -216,6 +262,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end
