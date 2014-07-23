@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330636F31980437E00BE8EC4 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 330636EC1980437E00BE8EC4 /* TPKeyboardAvoidingCollectionView.m */; };
+		330636F41980437E00BE8EC4 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 330636EE1980437E00BE8EC4 /* TPKeyboardAvoidingScrollView.m */; };
+		330636F51980437E00BE8EC4 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 330636F01980437E00BE8EC4 /* TPKeyboardAvoidingTableView.m */; };
+		330636F61980437E00BE8EC4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 330636F21980437E00BE8EC4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		330636F8198045E200BE8EC4 /* eagle1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 330636F7198045E200BE8EC4 /* eagle1.gif */; };
 		33B0E018197D80F7003C2840 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B0E017197D80F7003C2840 /* Foundation.framework */; };
 		33B0E01A197D80F7003C2840 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B0E019197D80F7003C2840 /* CoreGraphics.framework */; };
 		33B0E01C197D80F7003C2840 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B0E01B197D80F7003C2840 /* UIKit.framework */; };
@@ -46,6 +51,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		330636EB1980437E00BE8EC4 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		330636EC1980437E00BE8EC4 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		330636ED1980437E00BE8EC4 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		330636EE1980437E00BE8EC4 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		330636EF1980437E00BE8EC4 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		330636F01980437E00BE8EC4 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		330636F11980437E00BE8EC4 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		330636F21980437E00BE8EC4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		330636F7198045E200BE8EC4 /* eagle1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = eagle1.gif; sourceTree = "<group>"; };
 		33B0E014197D80F7003C2840 /* SimpleGrocery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGrocery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33B0E017197D80F7003C2840 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		33B0E019197D80F7003C2840 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +129,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		330636EA1980437E00BE8EC4 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				330636EB1980437E00BE8EC4 /* TPKeyboardAvoidingCollectionView.h */,
+				330636EC1980437E00BE8EC4 /* TPKeyboardAvoidingCollectionView.m */,
+				330636ED1980437E00BE8EC4 /* TPKeyboardAvoidingScrollView.h */,
+				330636EE1980437E00BE8EC4 /* TPKeyboardAvoidingScrollView.m */,
+				330636EF1980437E00BE8EC4 /* TPKeyboardAvoidingTableView.h */,
+				330636F01980437E00BE8EC4 /* TPKeyboardAvoidingTableView.m */,
+				330636F11980437E00BE8EC4 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				330636F21980437E00BE8EC4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
 		33B0E00B197D80F7003C2840 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +187,8 @@
 		33B0E01D197D80F7003C2840 /* SimpleGrocery */ = {
 			isa = PBXGroup;
 			children = (
+				330636F7198045E200BE8EC4 /* eagle1.gif */,
+				330636EA1980437E00BE8EC4 /* TPKeyboardAvoiding */,
 				33B0E026197D80F7003C2840 /* LBJPAppDelegate.h */,
 				33B0E027197D80F7003C2840 /* LBJPAppDelegate.m */,
 				33B0E029197D80F7003C2840 /* Main.storyboard */,
@@ -280,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33B0E030197D80F7003C2840 /* Images.xcassets in Resources */,
+				330636F8198045E200BE8EC4 /* eagle1.gif in Resources */,
 				33B0E022197D80F7003C2840 /* InfoPlist.strings in Resources */,
 				33B0E02B197D80F7003C2840 /* Main.storyboard in Resources */,
 			);
@@ -300,10 +332,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				330636F41980437E00BE8EC4 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				330636F51980437E00BE8EC4 /* TPKeyboardAvoidingTableView.m in Sources */,
 				33B0E02E197D80F7003C2840 /* LBJPViewController.m in Sources */,
 				33B0E051197D8523003C2840 /* LBJPTableViewCell.m in Sources */,
+				330636F61980437E00BE8EC4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				33B0E028197D80F7003C2840 /* LBJPAppDelegate.m in Sources */,
 				33B0E024197D80F7003C2840 /* main.m in Sources */,
+				330636F31980437E00BE8EC4 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				33B0E04E197D829B003C2840 /* LBJPTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,6 +553,7 @@
 				33B0E048197D80F8003C2840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33B0E049197D80F8003C2840 /* Build configuration list for PBXNativeTarget "SimpleGroceryTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +562,7 @@
 				33B0E04B197D80F8003C2840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
