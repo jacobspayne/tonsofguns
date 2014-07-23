@@ -197,6 +197,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="caliberTextField" destination="f6g-H7-Lf4" id="uRm-kL-yb6"/>
+                        <outlet property="manufacturerTextField" destination="fk3-vE-rY6" id="3dz-6i-yj6"/>
+                        <outlet property="nameTextField" destination="77p-af-GeJ" id="4K7-eO-807"/>
+                        <outlet property="nicknameTextField" destination="pCG-FK-npR" id="pTY-Oy-DDi"/>
+                        <outlet property="pictureImageView" destination="E5W-QL-v7X" id="y8g-uT-aYD"/>
+                        <outlet property="rateOfFireTextField" destination="q6B-Pz-N9F" id="Uhd-0n-ZUZ"/>
+                        <outlet property="typeTextField" destination="Y3I-Af-GeY" id="tvP-4f-2jW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tB9-QL-1fV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

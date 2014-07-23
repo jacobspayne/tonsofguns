@@ -32,11 +32,22 @@
 }
 
 - (IBAction)saveNewItem:(id)sender {
-    PFObject *object = [PFObject objectWithClassName:@"GroceryListItem"];
-    [object setObject:_itemTitle.text forKey:@"title"];
-    NSNumber *checkedAsNumber = [NSNumber numberWithBool:FALSE];
-    [object setValue:checkedAsNumber forKey:@"checked"];
-    [object save];
+    PFObject *object = [PFObject objectWithClassName:@"Gun"];
+    [object setObject:_nicknameTextField.text forKey:@"nickname"];
+    [object setObject:_typeTextField.text forKey:@"type"];
+    [object setObject:_manufacturerTextField.text forKey:@"manufacturer"];
+    [object setObject:_nameTextField.text forKey:@"name"];
+    [object setObject:_caliberTextField.text forKey:@"caliber"];
+    [object setObject:_rateOfFireTextField.text forKey:@"rate_of_fire"];
+    
+    // get the displayed file, upload it and save the gun after the upload was sucessful.
+    NSData *imageData = UIImagePNGRepresentation(_pictureImageView.image);
+    PFFile *imageFile = [PFFile fileWithName:@"gun.png" data:imageData];
+    
+    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+        [object setObject:imageFile forKey:@"picture"];
+        [object saveInBackground];
+    }];
     
     [self.navigationController popViewControllerAnimated:YES];
 }

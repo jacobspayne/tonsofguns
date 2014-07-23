@@ -25,13 +25,13 @@
         // Custom the table
         
         // The className to query on
-        self.parseClassName = @"GroceryListItem";
+        self.parseClassName = @"Gun";
         
         // The key of the PFObject to display in the label of the default cell style
-        self.textKey = @"title";
+        self.textKey = @"nickname";
         
         // The title for this table in the Navigation Controller.
-        self.title = @"Grocery List";
+        self.title = @"GunBuddy";
         
         // Whether the built-in pull-to-refresh is enabled
         self.pullToRefreshEnabled = YES;
@@ -54,13 +54,13 @@
         // Custom the table
         
         // The className to query on
-        self.parseClassName = @"GroceryListItem";
+        self.parseClassName = @"Gun";
         
         // The key of the PFObject to display in the label of the default cell style
-        self.textKey = @"title";
+        self.textKey = @"nickname";
         
         // The title for this table in the Navigation Controller.
-        self.title = @"Grocery List";
+        self.title = @"GunBuddy";
         
         // Whether the built-in pull-to-refresh is enabled
         self.pullToRefreshEnabled = YES;
@@ -148,7 +148,7 @@
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     }
     
-    [query orderByAscending:@"priority"];
+    [query orderByAscending:@"nickname"];
     
     return query;
 }
@@ -164,16 +164,7 @@
     }
     
     // Configure the cell
-    cell.textLabel.text = [object objectForKey:@"title"];
-    //cell.detailTextLabel.text = [NSString stringWithFormat:@"Priority: %@", [object objectForKey:@"priority"]];
-    
-    BOOL checked = [[object objectForKey:@"checked"] boolValue];
-    if (checked) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    }
-    else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
+    cell.textLabel.text = [object objectForKey:@"nickname"];
     
     return cell;
 }
@@ -191,15 +182,6 @@
         return;
         //rest of didSelectRowAtIndexPath doesn't run because of return;
     }
-    
-    // grab the Parse object associated with the selected
-    PFObject * object = [self.objects objectAtIndex: indexPath.row];
-    BOOL checked = [[object objectForKey:@"checked"]boolValue];
-    checked = !checked;
-    NSNumber *checkedAsNumber = [NSNumber numberWithBool:checked];
-    [object setValue:checkedAsNumber forKey:@"checked"];
-    [object save];
-    [self loadObjects];
 }
 
 
