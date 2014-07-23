@@ -100,11 +100,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33B0E05D197D876E003C2840 /* MobileCoreServices.framework in Frameworks */,
 				33B0E065197D8788003C2840 /* SystemConfiguration.framework in Frameworks */,
 				33B0E063197D8782003C2840 /* StoreKit.framework in Frameworks */,
 				33B0E061197D877C003C2840 /* Security.framework in Frameworks */,
 				33B0E05F197D8774003C2840 /* QuartzCore.framework in Frameworks */,
-				33B0E05D197D876E003C2840 /* MobileCoreServices.framework in Frameworks */,
 				33B0E05B197D8767003C2840 /* libz.dylib in Frameworks */,
 				33B0E059197D8760003C2840 /* CoreLocation.framework in Frameworks */,
 				33B0E01A197D80F7003C2840 /* CoreGraphics.framework in Frameworks */,
@@ -192,11 +192,11 @@
 				33B0E026197D80F7003C2840 /* LBJPAppDelegate.h */,
 				33B0E027197D80F7003C2840 /* LBJPAppDelegate.m */,
 				33B0E029197D80F7003C2840 /* Main.storyboard */,
-				33B0E02C197D80F7003C2840 /* LBJPViewController.h */,
 				33B0E04C197D829B003C2840 /* LBJPTableViewController.h */,
 				33B0E04D197D829B003C2840 /* LBJPTableViewController.m */,
 				33B0E04F197D8523003C2840 /* LBJPTableViewCell.h */,
 				33B0E050197D8523003C2840 /* LBJPTableViewCell.m */,
+				33B0E02C197D80F7003C2840 /* LBJPViewController.h */,
 				33B0E02D197D80F7003C2840 /* LBJPViewController.m */,
 				33B0E02F197D80F7003C2840 /* Images.xcassets */,
 				33B0E01E197D80F7003C2840 /* Supporting Files */,

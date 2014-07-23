@@ -136,7 +136,6 @@
     // This method is called before a PFQuery is fired to get more objects
 }
 
-
 // Override to customize what kind of query to perform on the class. The default is to query for
 // all objects ordered by createdAt descending.
 - (PFQuery *)queryForTable {
@@ -158,16 +157,19 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    LBJPTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[LBJPTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell
-    cell.textLabel.text = [object objectForKey:@"nickname"];
+    cell.displayLabel.text = [object objectForKey:@"nickname"];
+    cell.subtitleLabel.text = [object objectForKey:@"manufacturer"];
+    //cell.thumbnailImage.image = [object objectForKey:@"picture"];
     
     return cell;
 }
+
 
 
 

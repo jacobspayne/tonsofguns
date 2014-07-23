@@ -10,5 +10,8 @@
 #import <Parse/Parse.h>
 
 @interface LBJPTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *displayLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subtitleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnailImage;
 
 @end

@@ -11,6 +11,7 @@
 
 @interface LBJPTableViewController : PFQueryTableViewController
 
+
 @property (weak, nonatomic, readwrite) NSMutableArray *tableData;
 
 @end
