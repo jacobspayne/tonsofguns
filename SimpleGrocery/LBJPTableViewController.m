@@ -8,6 +8,7 @@
 
 #import "LBJPTableViewController.h"
 #import "LBJPTableViewCell.h"
+#import "LBJPGunDetailsViewController.h"
 #import <Parse/Parse.h>
 
 @interface LBJPTableViewController ()
@@ -169,6 +170,8 @@
          if (!error){
              cell.thumbnailImage.image = imageFile;
          }}];
+    
+    cell.parseObject = object;
 
     return cell;
 }
@@ -296,8 +299,19 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"gunDetailsView"]) {
+        
+        // Get destination view
+        LBJPGunDetailsViewController *destinationViewController = [segue destinationViewController];
+        
+        LBJPTableViewCell* cell = (LBJPTableViewCell*)sender;
+        //NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        
+        PFObject *cellObject = [cell parseObject];
+        
+        // Pass the information to your destination view
+        [destinationViewController setParseObject:cellObject];
+    }
 }
 
 

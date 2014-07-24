@@ -187,10 +187,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)image:(UIImage *)image
-finishedSavingWithError:(NSError *)error
- contextInfo:(void *)contextInfo
-{
+-(void)image:(UIImage *)image finishedSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     if (error) {
         UIAlertView *alert = [[UIAlertView alloc]
@@ -200,10 +197,7 @@ finishedSavingWithError:(NSError *)error
                               cancelButtonTitle:@"OK"
                               otherButtonTitles:nil];
         [alert show];
-        
     }
 }
-
-
 
 @end

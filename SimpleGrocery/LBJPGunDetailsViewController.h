@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface LBJPGunDetailsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *nicknameLabel;
@@ -15,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *caliberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rateOfFireLabel;
+@property (strong, nonatomic) PFObject *parseObject;
 
 @end
