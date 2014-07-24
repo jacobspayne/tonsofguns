@@ -62,15 +62,26 @@
     [object setObject:_caliberTextField.text forKey:@"caliber"];
     [object setObject:_rateOfFireTextField.text forKey:@"rate_of_fire"];
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Saving..."
+                                                    message:@"We are uploading your gun."
+                                                   delegate:nil
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:nil];
+    [alert show];
+    
     // get the displayed file, upload it and save the gun after the upload was sucessful.
     NSData *imageData = UIImagePNGRepresentation(_gunPictureButton.imageView.image);
     PFFile *imageFile = [PFFile fileWithName:@"gun.png" data:imageData];
     
-    [imageFile save];
-    [object setObject:imageFile forKey:@"picture"];
-    [object save];
-    
-    [self.navigationController popViewControllerAnimated:YES];
+    [imageFile saveInBackgroundWithBlock:^(BOOL success, NSError *error){
+        if (!error){
+            [object setObject:imageFile forKey:@"picture"];
+            [object save];
+            
+            [alert dismissWithClickedButtonIndex:[alert cancelButtonIndex] animated:NO];
+            
+            [self.navigationController popViewControllerAnimated:YES];
+        }}];
 }
 
 
