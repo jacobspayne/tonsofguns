@@ -13,5 +13,6 @@
 
 
 @property (weak, nonatomic, readwrite) NSMutableArray *tableData;
+-(void)loadParseImage:(PFObject *)parseObject forImageColumn:(NSString *)columnName withProgressBar:(UIProgressView *)progressBar andCompletionBlock:(void (^)(UIImage *imageFile, NSError *error))completionBlock;
 
 @end
