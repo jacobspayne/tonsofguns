@@ -60,10 +60,10 @@
 
 - (IBAction)getNewGunImage:(id)sender {
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@""
-                                                      message:@"Select a photo for your profile."
+                                                      message:@"Select a photo of your gun."
                                                      delegate:self
                                             cancelButtonTitle:@"Cancel"
-                                            otherButtonTitles:@"Take Photo",
+                                            otherButtonTitles:@"Take a picture",
                             @"Choose from Library",
                             nil];
     [message show];
@@ -121,54 +121,6 @@
 #pragma mark -
 #pragma mark UIImagePickerControllerDelegate methods
 
--(void)uploadImage:(NSData*)imageData withFileName:(NSString*)jpgName
-{
-    PFFile *imageFile = [PFFile fileWithName:jpgName data:imageData];
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"UserThumbnail"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Retrieved %d images.", objects.count);
-            
-            
-            // save the new file.
-            [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                PFObject *userPhoto;
-                if (!error) {
-                    if(objects.count >= 1) {
-                        
-                        // update existing object.
-                        userPhoto = objects[0];
-                    } else {
-                        
-                        //create a new object
-                        userPhoto = [PFObject objectWithClassName:@"Gun"];
-                        [userPhoto setObject:@"placeholderr" forKey:@"picture"];
-                    }
-                    
-                    // associate the image file with the user object.
-                    [userPhoto setObject:imageFile forKey:@"picture"];
-                    
-                    // save the object
-                    [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                        if (!error) {
-                            NSLog(@"Successfuly stored image.jpg");
-                        }
-                        else{
-                            // Log details of the failure
-                            NSLog(@"Error: %@ %@", error, [error userInfo]);
-                        }
-                    }];
-                    
-                }
-            }];
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-}
 
 // borrowed from http://www.samwirch.com/blog/cropping-and-resizing-images-camera-ios-and-objective-c
 - (UIImage *)squareImageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
@@ -222,20 +174,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         UIImage *image = [info
                           objectForKey:UIImagePickerControllerOriginalImage];
         
-        
-        // Resize image
-        //        UIGraphicsBeginImageContext(CGSizeMake(250, 250));
-        //        [image drawInRect: CGRectMake(0, 0, 250, 250)];
-        //        UIImage *smallImage = UIGraphicsGetImageFromCurrentImageContext();
-        //        UIGraphicsEndImageContext();
-        
-        UIImage *smallImage = [self squareImageWithImage:image scaledToSize:CGSizeMake(250, 250)];
+        UIImage *smallImage = [self squareImageWithImage:image scaledToSize:CGSizeMake(190, 190)];
         
         [self.gunPictureButton setImage:smallImage forState:UIControlStateNormal];
         [self.gunPictureButton setImage:smallImage forState:UIControlStateHighlighted];
-        
-        
-        
         
     }
     else if ([mediaType isEqualToString:(NSString *)kUTTypeMovie])
