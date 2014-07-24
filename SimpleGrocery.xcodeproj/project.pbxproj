@@ -38,6 +38,7 @@
 		33B0E061197D877C003C2840 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B0E060197D877C003C2840 /* Security.framework */; };
 		33B0E063197D8782003C2840 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B0E062197D8782003C2840 /* StoreKit.framework */; };
 		33B0E065197D8788003C2840 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B0E064197D8788003C2840 /* SystemConfiguration.framework */; };
+		33C6FE0E1980956300B9468C /* LBJPGunDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C6FE0D1980956300B9468C /* LBJPGunDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		33B0E060197D877C003C2840 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		33B0E062197D8782003C2840 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		33B0E064197D8788003C2840 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		33C6FE0C1980956300B9468C /* LBJPGunDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBJPGunDetailsViewController.h; sourceTree = "<group>"; };
+		33C6FE0D1980956300B9468C /* LBJPGunDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBJPGunDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 				33B0E050197D8523003C2840 /* LBJPTableViewCell.m */,
 				33B0E02C197D80F7003C2840 /* LBJPViewController.h */,
 				33B0E02D197D80F7003C2840 /* LBJPViewController.m */,
+				33C6FE0C1980956300B9468C /* LBJPGunDetailsViewController.h */,
+				33C6FE0D1980956300B9468C /* LBJPGunDetailsViewController.m */,
 				33B0E02F197D80F7003C2840 /* Images.xcassets */,
 				33B0E01E197D80F7003C2840 /* Supporting Files */,
 			);
@@ -334,6 +339,7 @@
 			files = (
 				330636F41980437E00BE8EC4 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				330636F51980437E00BE8EC4 /* TPKeyboardAvoidingTableView.m in Sources */,
+				33C6FE0E1980956300B9468C /* LBJPGunDetailsViewController.m in Sources */,
 				33B0E02E197D80F7003C2840 /* LBJPViewController.m in Sources */,
 				33B0E051197D8523003C2840 /* LBJPTableViewCell.m in Sources */,
 				330636F61980437E00BE8EC4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,

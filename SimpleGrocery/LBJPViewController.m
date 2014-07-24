@@ -164,8 +164,7 @@
     return newImage;
 }
 
--(void)imagePickerController:(UIImagePickerController *)picker
-didFinishPickingMediaWithInfo:(NSDictionary *)info
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
     
@@ -174,7 +173,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         UIImage *image = [info
                           objectForKey:UIImagePickerControllerOriginalImage];
         
-        UIImage *smallImage = [self squareImageWithImage:image scaledToSize:CGSizeMake(190, 190)];
+        UIImage *smallImage = [self squareImageWithImage:image scaledToSize:CGSizeMake(253, 190)];
         
         [self.gunPictureButton setImage:smallImage forState:UIControlStateNormal];
         [self.gunPictureButton setImage:smallImage forState:UIControlStateHighlighted];

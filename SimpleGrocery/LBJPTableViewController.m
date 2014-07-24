@@ -221,6 +221,7 @@
     [self performSegueWithIdentifier: @"newItem" sender: self];
 }
 
+// example from: https://coderwall.com/p/idwrhw
 -(void)loadParseImage:(PFObject *)parseObject forImageColumn:(NSString *)columnName withProgressBar:(UIProgressView *)progressBar andCompletionBlock:(void (^)(UIImage *imageFile, NSError *error))completionBlock{
     NSString *parseFileName = [NSString stringWithFormat:@"%@", [[parseObject objectForKey:columnName] name]];
     
