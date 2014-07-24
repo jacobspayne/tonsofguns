@@ -16,9 +16,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *caliberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *rateOfFireTextField;
-//@property (weak, nonatomic) IBOutlet PFImageView *pictureImageView;
 @property (weak, nonatomic) IBOutlet UIButton *gunPictureButton;
 
+@property (strong, nonatomic) PFObject *parseObject;
 
 - (IBAction)cancelAddItem:(id)sender;
 - (IBAction)saveNewItem:(id)sender;

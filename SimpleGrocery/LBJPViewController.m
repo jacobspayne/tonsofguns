@@ -10,6 +10,7 @@
 #import "LBJPTableViewCell.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "LBJPImageHelper.h"
 #import <Parse/Parse.h>
 
 @interface LBJPViewController ()
@@ -20,14 +21,25 @@
 
 @implementation LBJPViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    if(_parseObject){
+        _nicknameTextField.text = [_parseObject objectForKey:@"nickname"];
+        _typeTextField.text = [_parseObject objectForKey:@"type"];
+        _manufacturerTextField.text = [_parseObject objectForKey:@"manufacturer"];
+        _nameTextField.text = [_parseObject objectForKey:@"name"];
+        _caliberTextField.text = [_parseObject objectForKey:@"caliber"];
+        _rateOfFireTextField.text = [_parseObject objectForKey:@"rate_of_fire"];
+        
+        [LBJPImageHelper loadParseImage:_parseObject forImageColumn:@"picture" andCompletionBlock:^(UIImage *imageAsImage, NSError *error){
+            if (!error){
+                [self.gunPictureButton setImage:imageAsImage forState:UIControlStateNormal];
+                [self.gunPictureButton setImage:imageAsImage forState:UIControlStateHighlighted];
+            }}];
+    }
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -37,7 +49,12 @@
 }
 
 - (IBAction)saveNewItem:(id)sender {
-    PFObject *object = [PFObject objectWithClassName:@"Gun"];
+    PFObject *object = nil;
+    if(_parseObject){
+        object = _parseObject;
+    } else {
+        object = [PFObject objectWithClassName:@"Gun"];
+    }
     [object setObject:_nicknameTextField.text forKey:@"nickname"];
     [object setObject:_typeTextField.text forKey:@"type"];
     [object setObject:_manufacturerTextField.text forKey:@"manufacturer"];
@@ -49,23 +66,16 @@
     NSData *imageData = UIImagePNGRepresentation(_gunPictureButton.imageView.image);
     PFFile *imageFile = [PFFile fileWithName:@"gun.png" data:imageData];
     
-    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
-        [object setObject:imageFile forKey:@"picture"];
-        [object saveInBackground];
-    }];
+    [imageFile save];
+    [object setObject:imageFile forKey:@"picture"];
+    [object save];
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 
 - (IBAction)getNewGunImage:(id)sender {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@""
-                                                      message:@"Select a photo of your gun."
-                                                     delegate:self
-                                            cancelButtonTitle:@"Cancel"
-                                            otherButtonTitles:@"Take a picture",
-                            @"Choose from Library",
-                            nil];
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"" message:@"Select a photo of your gun." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Take a picture",  @"Choose from Library", nil];
     [message show];
 }
 
@@ -92,9 +102,7 @@
             UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
             imagePicker.delegate = self;
             imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-            imagePicker.mediaTypes = [NSArray arrayWithObjects:
-                                      (NSString *) kUTTypeImage,
-                                      nil];
+            imagePicker.mediaTypes = [NSArray arrayWithObjects: (NSString *) kUTTypeImage, nil];
             imagePicker.allowsEditing = NO;
             [self presentViewController:imagePicker animated:YES completion:nil];
         }
@@ -109,9 +117,7 @@
             UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
             imagePicker.delegate = self;
             imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-            imagePicker.mediaTypes = [NSArray arrayWithObjects:
-                                      (NSString *) kUTTypeImage,
-                                      nil];
+            imagePicker.mediaTypes = [NSArray arrayWithObjects: (NSString *) kUTTypeImage, nil];
             imagePicker.allowsEditing = NO;
             [self presentViewController:imagePicker animated:YES completion:nil];
         }
@@ -122,7 +128,7 @@
 #pragma mark UIImagePickerControllerDelegate methods
 
 
-// borrowed from http://www.samwirch.com/blog/cropping-and-resizing-images-camera-ios-and-objective-c
+// borrowed from http://www.samwirch.com/blog/cropping-and-resizing-images-camera-ios-and-objective-c and slithly modified
 - (UIImage *)squareImageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
     double ratio;
     double delta;
@@ -144,10 +150,7 @@
     }
     
     //make the final clipping rect based on the calculated values
-    CGRect clipRect = CGRectMake(-offset.x, -offset.y,
-                                 (ratio * image.size.width) + delta,
-                                 (ratio * image.size.height) + delta);
-    
+    CGRect clipRect = CGRectMake(-offset.x, -offset.y, (ratio * image.size.width) + delta, (ratio * image.size.height) + delta);
     
     //start a new context, with scale factor 0.0 so retina displays get
     //high quality image
@@ -167,35 +170,21 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
-    
-    
+
     if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
-        UIImage *image = [info
-                          objectForKey:UIImagePickerControllerOriginalImage];
-        
+        UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
         UIImage *smallImage = [self squareImageWithImage:image scaledToSize:CGSizeMake(253, 190)];
         
         [self.gunPictureButton setImage:smallImage forState:UIControlStateNormal];
         [self.gunPictureButton setImage:smallImage forState:UIControlStateHighlighted];
-        
     }
-    else if ([mediaType isEqualToString:(NSString *)kUTTypeMovie])
-    {
-        // Code here to support video if enabled
-    }
-    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)image:(UIImage *)image finishedSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     if (error) {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle: @"Save failed"
-                              message: @"Failed to save image"
-                              delegate: nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Save failed" message: @"Failed to save image" delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     }
 }

@@ -9,6 +9,7 @@
 #import "LBJPTableViewController.h"
 #import "LBJPTableViewCell.h"
 #import "LBJPGunDetailsViewController.h"
+#import "LBJPImageHelper.h"
 #import <Parse/Parse.h>
 
 @interface LBJPTableViewController ()
@@ -32,7 +33,7 @@
         self.textKey = @"nickname";
         
         // The title for this table in the Navigation Controller.
-        self.title = @"GunBuddy";
+        self.title = @"Tons Of Guns";
         
         // Whether the built-in pull-to-refresh is enabled
         self.pullToRefreshEnabled = YES;
@@ -61,7 +62,7 @@
         self.textKey = @"nickname";
         
         // The title for this table in the Navigation Controller.
-        self.title = @"GunBuddy";
+        self.title = @"Tons Of Guns";
         
         // Whether the built-in pull-to-refresh is enabled
         self.pullToRefreshEnabled = YES;
@@ -166,9 +167,12 @@
     cell.subtitleLabel.text = [object objectForKey:@"manufacturer"];
     
     
-    [self loadParseImage:object forImageColumn:@"picture" withProgressBar:nil  andCompletionBlock:^(UIImage *imageFile, NSError *error){
+    [LBJPImageHelper loadParseImage:object forImageColumn:@"picture" andCompletionBlock:^(UIImage *imageAsImage, NSError *error){
          if (!error){
-             cell.thumbnailImage.image = imageFile;
+             //NSData *imageData = UIImagePNGRepresentation(imageAsImage);
+             //[object setObject:imageData forKey:@"picture"];
+             
+             cell.thumbnailImage.image = imageAsImage;
          }}];
     
     cell.parseObject = object;
@@ -211,8 +215,6 @@
         //NSLog(@"Objects before delete: %@", self.objects);
         [object delete];
         [self loadObjects];
-        
-        
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }
@@ -222,59 +224,6 @@
 {
     NSLog(@"Just called the addNewItem method");
     [self performSegueWithIdentifier: @"newItem" sender: self];
-}
-
-// example from: https://coderwall.com/p/idwrhw
--(void)loadParseImage:(PFObject *)parseObject forImageColumn:(NSString *)columnName withProgressBar:(UIProgressView *)progressBar andCompletionBlock:(void (^)(UIImage *imageFile, NSError *error))completionBlock{
-    NSString *parseFileName = [NSString stringWithFormat:@"%@", [[parseObject objectForKey:columnName] name]];
-    
-    // Get a path to the place in the local documents directory on the iOS device where the image file should be stored.
-    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    
-    // You can change the path as you see fit by altering the stringByAppendingPathComponent call here.
-    NSString *imagesDirectory = [documentsDirectory stringByAppendingPathComponent:@"Images"];
-    NSString *storePath = [imagesDirectory stringByAppendingPathComponent:parseFileName];
-    
-    if (progressBar){
-        // Reset and show the progress bar
-        [progressBar setProgress:0.0 animated:NO];
-        progressBar.hidden = NO;
-    }
-    
-    // Image data from Parse.com is retrieved in the background.
-    [[parseObject objectForKey:columnName] getDataInBackgroundWithBlock:^(NSData *data, NSError *error){
-        if (!error){
-            NSData *fileData = [[NSData alloc] initWithData:data];
-            if (![[NSFileManager defaultManager] fileExistsAtPath:imagesDirectory]){
-                // Create the folder if it doesn't already exist.
-                [[NSFileManager defaultManager] createDirectoryAtPath:imagesDirectory withIntermediateDirectories:NO attributes:nil error:&error];
-            }
-            
-            // Write the PFFile data to the local file.
-            [fileData writeToFile:storePath atomically:YES];
-            
-            UIImage *showcaseImage;
-            if ([[NSFileManager defaultManager] fileExistsAtPath:imagesDirectory]){
-                showcaseImage = [UIImage imageWithContentsOfFile:storePath];
-            } else // No file exists at the expected path. Perhaps the disk is full, etc.?
-            {
-                NSLog(@"Unable to find image file where we expected it: %@", storePath);
-            }
-            completionBlock(showcaseImage, error);
-            
-            // This may be a good place to clean up the target directory.
-        }
-        else // Unable to pull the image data from Parse.com. Consider more robust error handling.
-        {
-            NSLog(@"Error getting image data.");
-            completionBlock(nil, error);
-        }
-    }
-                                                          progressBlock:^(int percentDone){
-                                                              if (progressBar){
-                                                                  [progressBar setProgress:percentDone animated:YES];
-                                                              }
-                                                          }];
 }
 
 /*

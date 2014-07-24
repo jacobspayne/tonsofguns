@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *caliberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rateOfFireLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *pictureImageView;
 @property (strong, nonatomic) PFObject *parseObject;
 
 @end
